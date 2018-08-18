@@ -1,0 +1,38 @@
+<div id = "container">
+    <div id="bootstrap-overload">
+
+        <!--user details on the left-->
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 panel panel-default sidebar">
+            <div class="panel panel-body">
+                <!--Profile image-->
+                <img class="img-responsive" src="../images/user-profile.jpg">
+                <!--User Details-->
+                <ul class="list-group">
+                    <li class="list-group-item">Shubham Singh</li>
+                    <li class="list-group-item">No. of Sensors: 10</li>
+                    <li class="list-group-item">Created On : 10/05/2016</li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Sensor list in center-->
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 panel panel-default">
+
+            <!-- Nav tabs -->
+            <ul>
+                <button class="btn btn-default"><a routerLink ="home" routerLinkActive="active">Home</a></button>
+
+                <button class="btn btn-default"><a routerLink ="sensors" routerLinkActive="active">Sensors</a></button>
+
+                <button class="btn btn-default"><a routerLink ="addSensor" routerLinkActive="active">Add Sensor</a></button>
+
+                <button class="btn btn-default"><a routerLink ="deleteSensor" routerLinkActive="active">Delete Sensor</a></button>
+            </ul>
+
+            <!-- Tab panes -->
+            <router-outlet></router-outlet>
+
+        </div>
+
+    </div>
+</div>

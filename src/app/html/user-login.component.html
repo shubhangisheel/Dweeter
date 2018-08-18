@@ -1,0 +1,74 @@
+<div class="container" id="bootstrap-override">
+
+    <img id = "wallpapper" src="../images/user-login.jpg">
+
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info" >
+            <div class="panel-heading" >
+                <div class="panel-title">Sign In</div>
+                <div style="float:right; font-size: 80%; position: relative; top:-10px;"><a href="#">Forgot password?</a></div>
+            </div>
+
+            <!--Div appears when user authentication fails-->
+            <div *ngIf="!authResponse">
+                <span>{{message}}</span>
+            </div>
+
+            <div style="padding-top:30px" class="panel-body" >
+
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                <form #loginForm = "ngForm" (ngSubmit) = "loginTest()" id="loginform" class="form-horizontal" role="form">
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input [(ngModel)] = "userName" name="userName" id="login-userName" type="text" class="form-control" value="" placeholder="userName or email">
+                    </div>
+
+                    <div style="margin-bottom: 25px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input [(ngModel)] = "password" name="password" id="login-password" type="password" class="form-control" placeholder="password">
+                    </div>
+
+
+                    <!--TODO: implement rememberme on login page-->
+                    <div class="input-group">
+                        <div class="checkbox">
+                            <label>
+                                <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                            </label>
+                        </div>x
+                    </div>
+
+
+                    <div style="margin-top:10px" class="form-group">
+                        <!-- Button -->
+
+                        <div class="col-sm-12 controls">
+                            <button type="submit" id="btn-login" class="btn btn-success">Login</button>
+                                    <!--TODO : [disabled]="!loginForm.form.valid"-->
+
+                            <button type="button" id="btn-fblogin" class="btn btn-primary">Login with Facebook</button>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-12 control">
+                            <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
+                                Don't have an account!
+                                <button routerLink ="/Sign-up" routerLinkActive="active">
+                                    Sign Up Here
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>

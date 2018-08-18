@@ -1,0 +1,265 @@
+<div class="container" id="bootstrap-override">
+
+  <!--Fourth row begins-->
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h3 id="PostAndGet" class="tryGetPost">Simple post and get <a class ="pull-right h3-custom" href="#Top">Top<span class = "glyphicon glyphicon-triangle-top pull-right" aria-hidden="true"></span></a></h3>
+      <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+
+        <!--Post begins-->
+        <div class="panel panel-default">
+          <div class="panel-heading panel-heading-post" role="tab" id="headingOne">
+            <h4 class="panel-title panel-title-custom1">
+              <a class= "all-post" role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Post  <span class = "text push-down" style="font-size: 14px;"> / api / :thingName / add</span><span class = "text-right pull-right push-down" style="font-size: 14px;">send data to cloud</span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+            <div class="panel-body panel-body-custom1">
+              <form>
+
+                <table class="table table1">
+                  <thead>
+                  <tr>
+                    <th>Parameters</th>
+                    <th class="table-post-value">Value</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <label for="formGroupData1">Thing Name</label>
+                    </td>
+                    <td>
+                      <input type="text" [(ngModel)]="thingName" name="thingName" class="form-control" id="formGroupData1" placeholder="Enter resource name here" required="required">
+                    </td>
+                    <td>A thing name is the name of the iot sensor device. It is advised to use devide Id to maintain uniqueness.</td>
+                    <td>Thing name : TA395 : Tempature sensor</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>Content</label>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+
+                <table class="table table1">
+                  <tbody id="simplePostTable" *ngFor="let keyValue of keyValues">
+                  <div>
+                    <tr>
+                      <td>
+                        <label for="formGroupData3">Key</label>
+                      </td>
+                      <td>
+                        <input type="text" [(ngModel)]="keyValue.key" name="keyValue.key" class="form-control" id="formGroupData3" placeholder="Enter content here" required="required">
+                      </td>
+                      <td>Enter your JSON string value here</td>
+                      <td>JSON String : first dweet : For tempature sensor</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label for="formGroupData4">Value</label>
+                      </td>
+                      <td>
+                        <input type="text" [(ngModel)]="keyValue.value" name="keyValue.value" class="form-control" id="formGroupData4" placeholder="Enter content here" required="required">
+                      </td>
+                      <td>Enter your JSON string value here</td>
+                      <td>JSON String : first dweet : For tempature sensor</td>
+                    </tr>
+
+                  </div>
+                  </tbody>
+                </table>
+                <button type="submit" (click)="addKey()" class="btn btn-custom1">Add Another Key !</button>
+                <button type="submit" (click)="onPost()" class="btn btn-custom1">Try it Out!</button>
+              </form>
+              <div *ngIf="showPostResponse">
+                <h4>Response from Server</h4>
+                <table class="table table1">
+                  <thead>
+                  <tr>
+                    <th>Thing Name</th>
+                    <th class="table-post-value">Content saved</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td> {{thingName}} </td>
+                    <td>
+                        <li *ngFor='let k of postResponse| pairs'>
+                          {{k.key}} : {{k.value}}
+                        </li>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Post ends-->
+
+        <!--Get begins-->
+        <div class="panel panel-default">
+          <div class="panel-heading panel-heading-get">
+            <h4 class="panel-title panel-title-custom2">
+              <a class= "all-get" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo" aria-expanded="true">
+                Get<span class = "text push-down" style="font-size: 14px;"> / api / :thingName /</span> <span class = "text-right pull-right" style="font-size: 14px;">fetch your data</span>
+              </a></h4>
+          </div>
+
+          <div id="collapseTwo" class="panel-collapse collapse" aria-expanded="true">
+            <div class="panel-body panel-body-custom2">
+
+              <!-- Here we insert a nested accordion -->
+              <div class="panel-group" id="accordion2">
+
+                <div class="panel panel-default">
+                  <div class="panel-heading panel-heading-get">
+                    <h4 class="panel-title panel-title-custom2">
+                      <a class= "all-get" data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerOne" aria-expanded="false" class="collapsed">
+                        Get latest key value pair
+                      </a></h4>
+                  </div>
+
+                  <div id="collapseInnerOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body panel-body-custom2">
+                      <form>
+                        <table class = "table table2">
+                          <thead>
+                          <tr>
+                            <th>Parameters</th>
+                            <th class="table-get-value">Value</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <td><label for = "formGroupData20">Thing Name</label></td>
+                            <td><input type="text" [(ngModel)]="thingName" name="thingName" class = "form-control" id = "formGroupData20" placeholder="Enter resource name here" required="required"></td>
+                            <td>A thing name is the name of the iot sensor device to be fetched.</td>
+                            <td>Thing name : TA395 : Tempature sensor</td>
+                          </tr>
+                          <tr>
+                            <td><button type = "submit" (click)="onGetLatest()" class = "btn btn-custom2">Try it Out!</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </form>
+
+                      <div *ngIf="showGetLatestResponse">
+                        <h4>Response from Server</h4>
+                        <table class = "table table1">
+                          <thead>
+                          <tr>
+                            <th>Thing Name</th>
+                            <th>ID</th>
+                            <th class="table-post-value">Content saved</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr *ngFor="let i of getLatestResponse">
+                            <td>{{i.thingName}}</td>
+                            <td>{{i._id}}</td>
+                            <td>
+                              <li *ngFor='let k of i.data| pairs'>
+                                      {{k.key}} : {{k.value}}
+                              </li>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                  <div class="panel-heading panel-heading-get">
+                    <h4 class="panel-title panel-title-custom2">
+                      <a class= "all-get" data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerTwo" class="collapsed" aria-expanded="false">
+                        Get all key value pairs
+                      </a></h4>
+                  </div>
+
+                  <div id="collapseInnerTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body panel-body-custom2">
+                      <form>
+                        <table class = "table table2">
+                          <thead>
+                          <tr>
+                            <th>Parameters</th>
+                            <th class="table-get-value">Value</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <td><label for = "formGroupData20">Thing Name</label></td>
+                            <td><input type="text" [(ngModel)]="thingName" name="thingName" class = "form-control" id = "formGroupData20" placeholder="Enter resource name here" required="required"></td>
+                            <td>A Thing name is the name of the iot sensor device to be fetched.</td>
+                            <td>Thing name : TA395 : Tempature sensor</td>
+                          </tr>
+                          <tr>
+                            <td><button type = "submit" (click)="onGetAll()" class = "btn btn-custom2">Try it Out!</button></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </form>
+
+                      <div *ngIf="showGetAllResponse">
+                        <h4>Response from Server</h4>
+                        <table class = "table table1">
+                          <thead>
+                          <tr>
+                            <th>Thing Name</th>
+                            <th>Created Date</th>
+                            <th>ID</th>
+                            <th class="table-post-value">Content saved</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr *ngFor="let obj of getAllResponse">
+                            <td>{{obj.thingName}}</td>
+                            <td>{{obj.createdDate}}</td>
+                            <td>{{obj._id}}</td>
+                            <td>
+                              <li *ngFor="let k of obj.data | pairs">
+                                  {{k.key}} : {{k.value}}
+                              </li>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Inner accordion ends here -->
+
+            </div>
+          </div>
+        </div>
+        <!--Get ends-->
+        <!--Fourth row ends-->
+
+      </div>
+    </div>
+  </div>
+</div>

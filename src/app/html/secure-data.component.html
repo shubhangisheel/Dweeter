@@ -1,0 +1,145 @@
+<div class="container" id="bootstrap-override">
+
+  <!--Seventh row begins-->
+  <div class = "row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h3 id = "locked-data" class="tryGetPost">Secure Data <a class ="pull-right h3-custom" href="#Top">Top<span class = "glyphicon glyphicon-triangle-top pull-right" aria-hidden="true"></span></a></h3>
+      <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
+
+        <!--Post begins-->
+        <div class="panel panel-default">
+          <div class="panel-heading panel-heading-post" role="tab" id="headingEight">
+            <h4 class="panel-title panel-title-custom1">
+              <a class= "all-post" role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapseSeven" aria-expanded="true" aria-controls="Seven">
+                Post<span class = "text-right pull-right" style="font-size: 14px;">secure your data</span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
+            <div class="panel-body panel-body-custom1">
+              <form>
+                <table class = "table table1">
+                  <thead>
+                  <tr>
+                    <th>Parameters</th>
+                    <th class="table-post-value">Value</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td><label for = "formGroupData10">Thing ID</label></td>
+                    <td><input type="text" [(ngModel)]="thingID" name="thingID" class = "form-control" id = "formGroupData10" placeholder="Enter thing ID here"required="required"></td>
+                    <td>Enter your Thing ID</td>
+                    <td>Thing ID : 1000 </td>
+                  </tr>
+                  <tr>
+                    <td><label for = "formGroupData11">Key</label></td>
+                    <td><input type="text" [(ngModel)] = "key" name="key" class = "form-control" id = "formGroupData11" placeholder="Enter key for thing here"required="required"></td>
+                    <td>Enter your key for thing</td>
+                    <td>Key : Smoke or Temparture </td>
+                  </tr>
+                  <tr>
+                    <td><label for = "formGroupData12">Value</label></td>
+                    <td><input type="text" [(ngModel)]="value" name="value" class = "form-control" id = "formGroupData12" placeholder="Enter value here"required="required"></td>
+                    <td>Enter a value for the key</td>
+                    <td>Value: 20 or 75</td>
+                  </tr>
+                  <tr>
+                    <td><button type = "submit" (click)="onPost()" class = "btn btn-custom1">Try it Out!</button></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </form>
+
+              <div *ngIf="showPostResponse">
+                <h4>Response from Server</h4>
+                <table class = "table table1">
+                  <thead>
+                  <tr>
+                    <th>Resource Name</th>
+                    <th class="table-post-value">Content saved</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Post ends-->
+
+        <!--Get begins-->
+        <div class="panel panel-default">
+          <div class="panel-heading panel-heading-get" role="tab" id="headingNine">
+            <h4 class="panel-title panel-title-custom2">
+              <a class= "all-get" role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapseEight" aria-expanded="true" aria-controls="collapseFour">
+                Get<span class = "text-right pull-right" style="font-size: 14px;">get locked content</span>
+              </a>
+            </h4>
+          </div>
+          <div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingNine">
+            <div class="panel-body panel-body-custom2">
+              <form>
+                <table class = "table table2">
+                  <thead>
+                  <tr>
+                    <th>Parameters</th>
+                    <th class="table-get-value">Value</th>
+                    <th>Description</th>
+                    <th>Example</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td><label for = "formGroupData13">Thing ID</label></td>
+                    <td><input type="text" [(ngModel)] = "thingID" name="thingID" class = "form-control" id = "formGroupData13" placeholder="Enter Thing ID here"required="required"></td>
+                    <td>Enter your Thing ID to get its key value pair</td>
+                    <td>Thing ID : 1000 </td>
+                  </tr>
+                  <tr>
+                    <td><button type = "submit" (click)="onGet()" class = "btn btn-custom2">Try it Out!</button></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </form>
+
+              <div *ngIf="showGetResponse">
+                <h4>Response from Server</h4>
+                <table class = "table table1">
+                  <thead>
+                  <tr>
+                    <th>Resource Name</th>
+                    <th class="table-post-value">Content saved</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let content of getLockedDweetResponse.data.entity">
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Get ends-->
+      </div>
+    </div>
+  </div>
+  <!--Seventh row ends-->
+
+</div>

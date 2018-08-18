@@ -1,0 +1,81 @@
+<div class="container" id="bootstrap-override">
+    
+
+    
+    <div style="margin-top:40px; font-size: 20px;" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <p>
+            We help you save your data!
+            <br> We help you analyse your data!
+            <br> Sign Up and checkout what we offer!
+            <br>
+        </p>
+        <!--<img src="">-->
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <h1>Sign Up for Free ! </h1>
+        <div [hidden]="submitted">
+            <form (ngSubmit)="onSignUp()" #userSignUp="ngForm" style="width:90%;">
+
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" required placeholder="Enter your first name"
+                           [(ngModel)]="firstName" name="firstName" #checkInput="ngModel">
+                    <!-- <div [hidden] = "checkInput.valid || checkInput.pristine"
+                             class="alert alert-danger">Name is required</div> -->
+
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" required placeholder="Enter your last name"
+                           [(ngModel)]="lastName" name="lastName" #checkInput="ngModel">
+                    <!-- <div [hidden] = "checkInput.valid || checkInput.pristine"
+                             class="alert alert-danger">Name is required</div> -->
+                </div>
+
+                <!--No exactly clear with pristine-->
+                <!-- We have added NgModel to two way bind name attribute of Hero object -->
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter your email address"
+                           [(ngModel)]="email" name="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="reEnterEmail">Re-enter Email</label>
+                    <input class="form-control" id="reEnterEmail" required placeholder="Re-enter your email address"
+                           [(ngModel)]="reEnterEmail" name="reEnterEmail">
+                </div>
+
+                <div class="form-group">
+                    <label for="signUpPassword">Password</label>
+                    <input class="form-control" id="signUpPassword" required placeholder="Enter password"
+                           [(ngModel)]="signUpPassword" name="signUpPassword">
+                </div>
+
+
+                <button type="submit" class="btn btn-default" [disabled]="!userSignUp.form.valid">Sign Up</button>
+
+            </form>
+        </div>
+    </div>
+
+
+
+</div>
+
+<!--Footer begins-->
+<footer>
+
+    <div class=" navbar navbar-default footer-style navbar-fixed-bottom">
+        <div class="container-fluid">
+            <p class="navbar-text pull-left ">iotorchard.io is brought to you by this.com</p>
+            <a class="navbar-text pull-right" href="">Privacy and Terms</a>
+
+        </div>
+    </div>
+</footer>
+<!--Footer ends-->
+

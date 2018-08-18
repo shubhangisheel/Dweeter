@@ -1,0 +1,201 @@
+/* You can add global styles to this file, and also import other style files */
+#bootstrap-override a{
+  text-decoration: none;
+}
+
+
+#bootstrap-override .feature-div {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 16px;
+  background-color: #E0E0E0;
+}
+
+#bootstrap-override .feature {
+  background-color: white;
+  display: block;
+  padding: 10px 10px;
+}
+
+#bootstrap-override .feature:hover{
+  background-color: #337ab7;
+  color:white;
+}
+
+#bootstrap-override .font-all{
+  font-family: "Roboto","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+#bootstrap-override.container{
+  width: 80%;
+}
+
+#bootstrap-override .gap{
+  padding: 3px;
+}
+
+.navbar-style{
+  border-radius: 0px;
+}
+
+.navbar-default.footer-style{
+  padding: 20px ;
+  background-color: black;
+  background-image: linear-gradient(to bottom,#E0E0E0 0,#E0E0E0 100%);
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+#Top.navbar{
+  margin-bottom: 0px;
+}
+
+
+#banner{
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+#bootstrap-override .first-row{
+  padding-top: 50px;
+}
+
+#bootstrap-override .cat-IOT{
+  padding-top: 70px;
+
+}
+
+#bootstrap-override .cat-IOT-img{
+  padding-top:70px;
+  padding-left:100px;
+}
+
+#bootstrap-override .cat-iotorchard{
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+#bootstrap-override .cat-iotorchard-img{
+  padding-top:70px;
+  padding-left:150px;
+}
+
+#bootstrap-override .cat-data{
+  padding-top: 50px;
+}
+
+#bootstrap-override .cat-data-img{
+  padding-top:90px;
+  padding-left:100px;
+}
+
+#bootstrap-override .cat-use{
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+#bootstrap-override .cat-use-img{
+  padding-top:70px;
+  padding-left:100px;
+}
+
+#bootstrap-override .custom-introduction{
+  color: #337ab7;
+  font-style: italic;
+  font-size: 25px;
+  padding-top: 3px;
+}
+
+#bootstrap-override .custom-introduction> .custom-introduction-para{
+  font-size: 35px;
+}
+
+#bootstrap-override .custom-introduction-tag{
+  color: #337ab7;
+  font-style: italic;
+  font-size: 20px;
+}
+
+#bootstrap-override .table-post-value{
+  width: 300px;
+}
+
+#bootstrap-override .table-get-value{
+  width: 300px;
+}
+
+#bootstrap-override .panel-title-custom1{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  background-color: #0E749A;
+  color: white;
+}
+
+#bootstrap-override .panel-default>.panel-heading-post {
+  background-color: #0E749A;
+  border-color: #0E749A;
+  background-image: linear-gradient(to bottom,#0E749A 0,#0E749A 100%);
+}
+
+#bootstrap-override .panel-body-custom1{
+  background-color: #e7f0f7;
+}
+
+#bootstrap-override .table1{
+  border-top: #333333;
+}
+
+#bootstrap-override .btn-custom1{
+  border-color: #0E749A;
+  background-image: linear-gradient(to bottom,#0E749A 0,#0E749A 100%);
+  color: white;
+}
+
+
+
+
+#bootstrap-override .panel-title-custom2{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  background-color: #02B3AA;
+  color: white;
+}
+
+#bootstrap-override .panel-default>.panel-heading-get {
+  background-color: #02B3AA;
+  border-color: #02B3AA;
+  background-image: linear-gradient(to bottom,#02B3AA 0,#02B3AA 100%);
+}
+
+#bootstrap-override .panel-body-custom2{
+  background-color: #e7f6ec;
+}
+
+#bootstrap-override .table2{
+  border-top: #333333;
+}
+
+#bootstrap-override .btn-custom2{
+  border-color: #02B3AA;
+  background-image: linear-gradient(to bottom,#02B3AA 0,#02B3AA 100%);
+  color: white;
+}
+
+
+#bootstrap-override .tryGetPost{
+  padding-top: 40px;
+  font-size: 24px;
+}
+
+#bootstrap-override .h3-custom{
+  font-size: 14px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 1.42857143;
+  padding-bottom: 0px;
+  text-decoration: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  cursor: auto;
+}

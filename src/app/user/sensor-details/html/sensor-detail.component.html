@@ -1,0 +1,33 @@
+<div id = "container">
+
+    <div id="bootstrap-overload">
+
+        <!--Sensor details on the left-->
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 panel panel-default sidebar">
+            <div class="panel panel-body">
+                <!--Sensor image-->
+                <img class="img-responsive" src="../images/sensor-img.png">
+                <!--Sensor Details-->
+                <ul class="list-group">
+                    <li class="list-group-item">Temperature Sensor</li>
+                    <li class="list-group-item">Creadted : 10/05/2016</li>
+                    <li class="list-group-item">Last Updated : 10/05/2016</li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Sensor list in center-->
+        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 panel panel-default">
+            <!-- Nav tabs -->
+            <ul>
+                <button class="btn btn-default"><a routerLink ="sensor-home" routerLinkActive="active">Home</a></button>
+                <button class="btn btn-default"><a routerLink ="view" routerLinkActive="active">View Data</a></button>
+                <button class="btn btn-default"><a routerLink ="add" routerLinkActive="active">Add Data</a></button>
+                <button class="btn btn-default"><a routerLink ="delete" routerLinkActive="active">Delete Data</a></button>
+            </ul>
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
+
+</div>
